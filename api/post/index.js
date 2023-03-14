@@ -35,7 +35,6 @@ export default async function postTodo(request, response) {
   if (request.method !== "POST") {
     return response.status(400).json("method Error");
   }
-  return response.status(200).json("ok");
 
   const options = {
     method: "POST",
@@ -54,7 +53,7 @@ export default async function postTodo(request, response) {
       ],
     }),
   };
-  const { body } = request;
+
   const res = await fetch(
     `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
     options

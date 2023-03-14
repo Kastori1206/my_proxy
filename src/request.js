@@ -16,11 +16,6 @@ export const postTodo = async () => {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      userId: 1,
-      title: "new Todo",
-      completed: true,
-    }),
   });
   const result = response.json();
   return result;
