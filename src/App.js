@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 function App() {
   const [data, setData] = useState([]);
 
-  const hander = async () => {
+  const handler = async () => {
     const res = await fetch("/api");
     console.log(res);
     setData(res);
