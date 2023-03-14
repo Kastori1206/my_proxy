@@ -35,6 +35,8 @@ export default async function postTodo(request, response) {
   if (request.method !== "POST") {
     return response.status(400).json("method Error");
   }
+  return response.status(200).json("ok");
+
   const options = {
     method: "POST",
     headers: {
