@@ -6,7 +6,9 @@ function App() {
   const [data, setData] = useState([]);
 
   const handler = async () => {
-    const res = await fetch("/api");
+    const res = await fetch("/api", {
+      method: "POST",
+    });
     console.log(res);
     setData(res);
   };
