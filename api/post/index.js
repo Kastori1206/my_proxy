@@ -57,6 +57,7 @@ export default async function postTodo(request, response) {
     `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
     options
   );
-  const data = await res.json();
+  const data = await res;
+  console.log(data);
   return response.status(200).json(data);
 }
