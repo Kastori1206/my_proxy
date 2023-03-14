@@ -15,20 +15,6 @@ export const getTodo = async (id) => {
 export const postTodo = async () => {
   const response = await fetch("/api/post", {
     method: "POST",
-    headers: {
-      accept: "application/json",
-      "Notion-Version": "2022-06-28",
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${TOKEN}`,
-    },
-    body: JSON.stringify({
-      sorts: [
-        {
-          property: "WorkPeriod",
-          direction: "descending",
-        },
-      ],
-    }),
   });
   const result = response.json();
   return result;
