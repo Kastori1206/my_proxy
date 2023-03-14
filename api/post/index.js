@@ -28,7 +28,7 @@
 //   return response.status(200).json(data);
 // }
 import fetch from "node-fetch";
-import { TOKEN, DATABASE_ID } from "../../config";
+import { TOKEN, DATABASE_ID } from "../../src/config";
 
 // url/api/post 처럼 사용
 export default async function postTodo(request, response) {
