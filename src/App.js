@@ -8,6 +8,9 @@ function App() {
   const handler = async () => {
     const res = await fetch("/api", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
     console.log(res);
     setData(res);
