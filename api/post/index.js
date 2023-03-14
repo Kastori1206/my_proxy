@@ -36,29 +36,21 @@ export default async function postTodo(request, response) {
     return response.status(400).json("method Error");
   }
 
-  const options = {
-    method: "POST",
-    headers: {
-      accept: "application/json",
-      "Notion-Version": "2022-06-28",
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${TOKEN}`,
-    },
-    body: JSON.stringify({
-      sorts: [
-        {
-          property: "WorkPeriod",
-          direction: "descending",
-        },
-      ],
-    }),
-  };
-
+  const { body } = request;
   const res = await fetch(
     `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
-    options
+    {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "Notion-Version": "2022-06-28",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${TOKEN}`,
+      },
+      body: JSON.stringify(body),
+    }
   );
   const data = await res.json();
 
-  return response.status(200).json({ data });
+  return response.status(200).json(data);
 }
